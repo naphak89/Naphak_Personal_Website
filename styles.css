@@ -84,8 +84,8 @@ body {
 }
 
 .gradient__container{
-    top: -100px;
-    margin-top: 10%;
+    
+    margin-top: 15%;
     height: 400px;
     width: 100%;
     background: linear-gradient(45deg, #d2001a,#7462ff,#f48e21, #23d5ab);
@@ -104,3 +104,52 @@ body {
         background-position: 0 50%;
     }
 }
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+.hero__title-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__title-hello{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.hero__title-name{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.hero__title-label{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.profilePic__container{
+    height: 300px;
+    width: 200px;
+
+}
+
+.profilePic{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
