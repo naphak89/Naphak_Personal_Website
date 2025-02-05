@@ -1,0 +1,106 @@
+* {
+    padding: 0; /* reset CSS setting for different browser */
+    margin: 0;
+}
+
+/* Element Selector */
+body {
+    font-family: "Poppins", Times, serif;
+    /* background-color: #f7f7f7; */
+    background-color: #FFFFFF;
+    color: #333;
+}
+
+.navbar {
+    /* Add styles for navbar if needed */
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #FFFFFF;
+}
+
+.logo__container {
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+    margin-left: 5rem; 
+    width: 100%;
+    max-width: 1200px;
+    /* Keep this if you want some left margin */
+  
+   
+}
+
+.logo {
+   
+    padding: 0; /* Remove padding to avoid misalignment */
+    
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo__container {
+        margin: 0 1rem; /* Reduce margin on smaller screens */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .logo {
+        font-size: 14px; /* Adjust logo size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem; /* Adjust padding for very small screens */
+    }
+
+    .logo {
+        font-size: 12px; /* Further adjust logo size */
+    }
+}
+
+.custom-shape-divider-top-1738732671 {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1738732671 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1738732671 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.gradient__container{
+    top: -100px;
+    margin-top: 10%;
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(45deg, #d2001a,#7462ff,#f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 12s ease-in-out infinite;
+}
+
+@keyframes gradient__background{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
