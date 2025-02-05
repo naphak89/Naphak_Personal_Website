@@ -1,5 +1,5 @@
 * {
-    padding: 0; /* reset CSS setting for different browser */
+    padding: 0; /* Reset CSS settings for different browsers */
     margin: 0;
     box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
@@ -12,6 +12,7 @@ body {
     background-size: 300% 300%;
     animation: gradient__background 10s ease-in-out infinite;
     color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .navbar {
@@ -77,7 +78,7 @@ body {
     background-position: center;
     background-size: cover;
     background-image: url('./Images/wave-website.svg');
-    margin-bottom: -6px;
+    margin-bottom: 0; /* Remove negative margins */
 }
 
 @keyframes gradient__background {
@@ -99,7 +100,7 @@ body {
     width: 100%;
     flex-direction: column;
     background-color: #FFFFFF;
-    padding: 0 1rem;
+    padding: 0 1rem; /* Add horizontal padding */
 }
 
 .hero__title-container {
@@ -117,6 +118,7 @@ body {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    text-align: center; /* Center text to prevent shifting */
 }
 
 .profilePic__container {
@@ -129,4 +131,5 @@ body {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
