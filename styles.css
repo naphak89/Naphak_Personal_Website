@@ -91,6 +91,23 @@ html, body {
         height: 150px; /* Further adjust height for very small screens */
         max-width: 100%; /* Ensure it fits the screen */
     }
+    .hero__title-name{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center; /* Center text to prevent shifting */
+        font-size: 24px;
+    }
+    .hero__title-hello,
+    .hero__title-label {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center; /* Center text to prevent shifting */
+        font-size: 10px;
+    }
 }
 
 .spacer {
@@ -124,6 +141,7 @@ html, body {
     flex-direction: column;
     background-color: #ffffff;
     min-width: 100%;
+    padding-bottom: 5vh;
 }
 
 .hero__title-container {
@@ -136,12 +154,17 @@ html, body {
     min-width: 200px;
 }
 .hero__title-name{
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 15s ease-in-out infinite;
     display: flex;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center; /* Center text to prevent shifting */
     font-size: 28px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .hero__title-hello,
 .hero__title-label {
