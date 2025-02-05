@@ -110,16 +110,7 @@ html, body {
     }
 }
 
-.spacer {
-    max-width: 100%;
-    aspect-ratio: 960 / 540;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('./Images/wave-website.svg');
-    margin-bottom: 0; /* Remove negative margins */
-}
+
 
 @keyframes gradient__background {
     0% {
@@ -141,7 +132,7 @@ html, body {
     flex-direction: column;
     background-color: #ffffff;
     min-width: 100%;
-    padding-bottom: 5vh;
+    padding-bottom: 10vh;
 }
 
 .hero__title-container {
@@ -176,12 +167,59 @@ html, body {
     font-size: 14px;
 }
 
+
 .profilePic__container {
     margin-top: 30px;
     height: 225px;
     width: 150px;
     min-width: 150px;
 }
+
+/* .btn-outline-primary{
+    border-radius: 10px;
+    width: 120px;
+    min-width: 120px;
+    height: 35px;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.CVcard__link{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.CVcard{
+    background-color: #333;
+    border-radius: 10px;
+    width: 120px;
+    min-width: 120px;
+    height: 35px;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.CVcard::after{
+    content: "";
+    position: absolute;
+    height: 35px;
+    width: 120px;
+    background-color: #f42121;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 
 .profilePic {
     object-fit: cover;
