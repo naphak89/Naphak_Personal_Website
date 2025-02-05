@@ -2,10 +2,11 @@
     padding: 0; /* Reset CSS settings for different browsers */
     margin: 0;
     box-sizing: border-box; /* Include padding and border in element's total width and height */
+    max-width: 100%;
 }
 
 /* Element Selector */
-body {
+html, body {
     font-family: "Poppins", Times, serif;
     width: 100%;
     background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
@@ -20,6 +21,7 @@ body {
     justify-content: center;
     padding: 1rem;
     background-color: #FFFFFF;
+    min-width: 200;
 }
 
 .logo__container {
@@ -37,6 +39,9 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero{
+        min-width: 300px;
+    }
     .logo__container {
         margin: 0 1rem; /* Reduce margin on smaller screens */
     }
@@ -52,7 +57,24 @@ body {
     .profilePic__container {
         height: 200px; /* Adjust height for smaller screens */
         width: 100%; /* Make width responsive */
-        max-width: 300px; /* Limit max width */
+        max-width: 200px; /* Limit max width */
+    }
+    .hero__title-name{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center; /* Center text to prevent shifting */
+        font-size: 24px;
+    }
+    .hero__title-hello,
+    .hero__title-label {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center; /* Center text to prevent shifting */
+        font-size: 12px;
     }
 }
 
@@ -72,6 +94,7 @@ body {
 }
 
 .spacer {
+    max-width: 100%;
     aspect-ratio: 960 / 540;
     width: 100%;
     background-repeat: no-repeat;
@@ -99,32 +122,42 @@ body {
     justify-content: center;
     width: 100%;
     flex-direction: column;
-    background-color: #FFFFFF;
-    padding: 0 1rem; /* Add horizontal padding */
+    background-color: #ffffff;
+    min-width: 100%;
 }
 
 .hero__title-container {
+    margin-top: 5vh;
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 200px;
 }
-
+.hero__title-name{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center; /* Center text to prevent shifting */
+    font-size: 28px;
+}
 .hero__title-hello,
-.hero__title-name,
 .hero__title-label {
     display: flex;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center; /* Center text to prevent shifting */
+    font-size: 14px;
 }
 
 .profilePic__container {
     margin-top: 30px;
-    height: 300px;
-    width: 200px;
+    height: 225px;
+    width: 150px;
+    min-width: 150px;
 }
 
 .profilePic {
