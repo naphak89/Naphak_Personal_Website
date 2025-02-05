@@ -1,18 +1,20 @@
 * {
     padding: 0; /* reset CSS setting for different browser */
     margin: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Element Selector */
 body {
     font-family: "Poppins", Times, serif;
-    /* background-color: #f7f7f7; */
-    background-color: #FFFFFF;
+    width: 100%;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 10s ease-in-out infinite;
     color: #333;
 }
 
 .navbar {
-    /* Add styles for navbar if needed */
     display: flex;
     justify-content: center;
     padding: 1rem;
@@ -25,17 +27,12 @@ body {
     margin-left: 5rem; 
     width: 100%;
     max-width: 1200px;
-    /* Keep this if you want some left margin */
-  
-   
 }
 
+/* Logo adjustment */
 .logo {
-   
     padding: 0; /* Remove padding to avoid misalignment */
-    
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -50,6 +47,12 @@ body {
     .logo {
         font-size: 14px; /* Adjust logo size for smaller screens */
     }
+
+    .profilePic__container {
+        height: 200px; /* Adjust height for smaller screens */
+        width: 100%; /* Make width responsive */
+        max-width: 300px; /* Limit max width */
+    }
 }
 
 @media (max-width: 480px) {
@@ -60,47 +63,30 @@ body {
     .logo {
         font-size: 12px; /* Further adjust logo size */
     }
+
+    .profilePic__container {
+        height: 150px; /* Further adjust height for very small screens */
+        max-width: 100%; /* Ensure it fits the screen */
+    }
 }
 
-.custom-shape-divider-top-1738732671 {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
+.spacer {
+    aspect-ratio: 960 / 540;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('./Images/wave-website.svg');
 }
 
-.custom-shape-divider-top-1738732671 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-}
-
-.custom-shape-divider-top-1738732671 .shape-fill {
-    fill: #FFFFFF;
-}
-
-.gradient__container{
-    
-    margin-top: 15%;
-    height: 400px;
-    width: 100%;
-    background: linear-gradient(45deg, #d2001a,#7462ff,#f48e21, #23d5ab);
-    background-size: 300% 300%;
-    animation: gradient__background 12s ease-in-out infinite;
-}
-
-@keyframes gradient__background{
-    0%{
+@keyframes gradient__background {
+    0% {
         background-position: 0 50%;
     }
-    50%{
+    50% {
         background-position: 100% 50%;
     }
-    100%{
+    100% {
         background-position: 0 50%;
     }
 }
@@ -110,9 +96,11 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-
+    flex-direction: column;
+    background-color: #FFFFFF;
 }
-.hero__title-container{
+
+.hero__title-container {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -120,36 +108,23 @@ body {
     align-items: center;
 }
 
-.hero__title-hello{
+.hero__title-hello,
+.hero__title-name,
+.hero__title-label {
     display: flex;
     width: 100%;
     justify-content: center;
-    
+    flex-wrap: wrap;
 }
 
-.hero__title-name{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    
-}
-
-.hero__title-label{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    
-}
-
-.profilePic__container{
+.profilePic__container {
+    margin-top: 30px;
     height: 300px;
     width: 200px;
-
 }
 
-.profilePic{
+.profilePic {
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
-
