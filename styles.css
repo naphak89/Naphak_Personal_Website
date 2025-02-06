@@ -338,14 +338,22 @@ a:link {
     min-width: 300px;
     text-align: center;
     border-radius: 12px;
+    object-fit: cover;
 }
 
-.card__pic{
+.card__pic-wrap{
     height: 180px;
     width: 180px;
+    overflow: hidden;
     object-fit: cover;
     margin-top: 40px;
     border-radius: 8px;
+}
+.card__pic{
+    
+    height: 180px;
+    width: 180px;
+    
 }
 
 .card__pic-azai{
