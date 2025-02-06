@@ -11,7 +11,7 @@ html, body {
     /* background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
     background-size: 300% 300%;
     animation: gradient__background 10s ease-in-out infinite; */
-    color: #333;
+    color: #3f3f3f;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;
     justify-content: center;
@@ -155,14 +155,15 @@ html, body {
     background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
     background-size: 300% 300%;
     animation: gradient__background 15s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: flex;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center; /* Center text to prevent shifting */
     font-size: 28px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    
 }
 .hero__title-hello,
 .hero__title-label {flex:1;
@@ -202,6 +203,8 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 } 
 
 .CVcard{
@@ -260,8 +263,11 @@ html, body {
 }
 
 .CVcard:hover{
-    background-color: transparent;
-    
+    background-color: transparent;    
+}
+
+.CVcard__link:hover{
+    color: #f0f0f0;
 }
 
 a:link { 
@@ -280,9 +286,9 @@ a:link {
 
   /*---------Skills---------------*/
 
-  .skills{
-    padding-top: 5vi;
-    padding-bottom: 2vi;
+  .section__title{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
     background-size: 300% 300%;
     animation: gradient__background 10s ease-in-out infinite;
@@ -295,7 +301,7 @@ a:link {
     min-height: 130px;
   }
 
-  .skill__heading{
+  .section__heading{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,13 +310,13 @@ a:link {
     color: #FFFFFF;
   }
 
-.skill__label-container{
+.section__label-container{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.skill__label{
+.section__label{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -321,8 +327,8 @@ a:link {
 }
 
 .skill__container{
-    margin-top: 40px;
-    background-color: #969696;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -333,42 +339,164 @@ a:link {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #da5252;
+    background-color: #f7f7f7;
     width: 300px;
     min-width: 300px;
     text-align: center;
-    border-radius: 12px;
-    object-fit: cover;
+    border-radius: 8px;
+    position: relative;
+}
+
+.skill__card::before{
+    content: "";
+    background-color: #757575;
+    height: 100%;
+    width: 100%;
+    filter: blur(0.8rem);
+    opacity: 0.3;
+    position: absolute;
+    z-index: -1;
 }
 
 .card__pic-wrap{
-    height: 180px;
-    width: 180px;
-    overflow: hidden;
+    box-shadow: 0px 0px 15px #e2e2e2;
+    
+    height: 150px;
+    width: 150px;
     object-fit: cover;
     margin-top: 40px;
     border-radius: 8px;
+    
+    position: relative; 
 }
+
+.card__pic-wrap::before{
+    content: "";
+    background-color: #757575;
+    height: 100%;
+    width: 100%;
+    filter: blur(0.8rem);
+    opacity: 0.3;
+    z-index: -1;
+    position: absolute;
+    
+}
+
 .card__pic{
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
     
-    height: 180px;
-    width: 180px;
-    
-}
-
-.card__pic-azai{
-    zoom: 100%;
     
 }
 
-.card__title{
+.card__pic-ReTrade{
+    object-fit: contain;
+}
+
+.card__text-container{
     margin-top: 15px;
+    margin-bottom: 20px;
+}
+.card__title{
+    margin: 0;
     font-weight: 500;
     font-size: 22px;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 15s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .card__description{
+    color: #3f3f3f;
     padding-left: 20px;
     padding-right: 20px;
-    font-size: 16px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.card__button{
+    
+    width: 120px;
+    height: 30px;
+    background-color: #3f3f3f;
+    border: none;
+    color: #f0f0f0;
+    border-radius: 1000px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+@keyframes gradient__button{
+    0% {
+        background-position: 0 50%
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 0% 50%;
+    } 
+}
+.card__button:hover{
+    background-image: conic-gradient(from var(--angle), #6cceff, #7462ff, #f48e21, #23d5ab);
+    animation: 3s spin ease-in-out infinite;
+    
+}
+.card__link:hover{
+    color: #ffffff;
+}
+.card__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+}
+
+.sectionSkill__title{
+    margin-top: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 10s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-width: 325px;
+    min-height: 130px;
+  }
+
+  .sectionSkill__heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 32px;
+    color: #FFFFFF;
+  }
+
+.sectionSkill__label-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionSkill__label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 8px;
+    color: #f5f5f5;
 }
