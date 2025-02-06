@@ -281,7 +281,8 @@ a:link {
   /*---------Skills---------------*/
 
   .skills{
-    padding-top: 4vi;
+    padding-top: 5vi;
+    padding-bottom: 2vi;
     background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
     background-size: 300% 300%;
     animation: gradient__background 10s ease-in-out infinite;
@@ -291,7 +292,7 @@ a:link {
     align-items: center;
     width: 100%;
     min-width: 325px;
-
+    min-height: 130px;
   }
 
   .skill__heading{
@@ -313,7 +314,6 @@ a:link {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2b2b2b;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 8px;
@@ -321,25 +321,46 @@ a:link {
 }
 
 .skill__container{
-    margin-top: 5vi;
+    margin-top: 40px;
     background-color: #969696;
-    height: 300px;
     width: 80%;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
     flex-wrap: wrap;
 }
 .skill__card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #da5252;
-    object-fit: cover;
-    
+    width: 300px;
+    min-width: 300px;
+    text-align: center;
+    border-radius: 12px;
 }
 
 .card__pic{
-    height: 100px;
+    height: 180px;
+    width: 180px;
     object-fit: cover;
-    
+    margin-top: 40px;
+    border-radius: 8px;
 }
 
 .card__pic-azai{
+    zoom: 100%;
     
+}
+
+.card__title{
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.card__description{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
 }
