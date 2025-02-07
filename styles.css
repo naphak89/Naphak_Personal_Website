@@ -339,9 +339,9 @@ a:link {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #f7f7f7;
     width: 300px;
     min-width: 300px;
+    background-color: #f7f7f7;
     text-align: center;
     border-radius: 8px;
     position: relative;
@@ -516,3 +516,58 @@ a:link {
     animation: appear 1s ease; /* Specify duration */
     animation-fill-mode: forwards; /* Keeps the final state of the animation */
 }
+
+.technicalSkill{
+    margin: 3rem;
+    height: 300px;
+    /* width: 90%; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.technicalSkillImage__Container{
+    width: 420px;
+    min-width: 420px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.technicalSkill__Text-wrap{
+    display: flex;
+    justify-content: center;
+}
+.technicalSkill__Text-Container{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+}
+
+.technicalSkill__Text{
+    margin: 0;
+    font-size: 14px;
+    padding: 0;
+}
+
+.technicalSkill__Text-Heading{
+    font-size: 16px;
+    font-weight: 500;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 15s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
