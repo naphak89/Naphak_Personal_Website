@@ -629,14 +629,13 @@ a:link {
     position: absolute;
     height: 104%;
     width: 102%;
-    background-image: conic-gradient(from var(--angle), transparent, #7462ff, #f48e21, #23d5ab);
+    background-image: conic-gradient(from var(--angle), rgb(62, 213, 244), #7462ff, #f48e21, #23d5ab);
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     z-index: -1;
     padding: 18.5px;
     border-radius: 10px;
-    animation: 3s spin linear infinite
   }
   
   
