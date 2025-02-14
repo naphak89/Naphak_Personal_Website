@@ -395,6 +395,13 @@ a:link {
     object-fit: contain;
 }
 
+.card__pic-restate{
+    object-fit: cover;
+}
+
+.card__pic-wrap2{
+    margin: 1rem;
+}
 .card__text-container{
     margin-top: 15px;
     margin-bottom: 20px;
