@@ -329,9 +329,9 @@ a:link {
 }
 
 .skill__container{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    width: 80%;
+   
+    padding: 3rem 2rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 35px;
@@ -375,9 +375,9 @@ a:link {
     animation: 3s spin linear infinite
 }
 .card__StoryMap::after{
-    content: "Coming Sep 2025!";
+    content: "Launching Sep 2025!";
     font-weight: 600;
-    font-size: 9px;
+    font-size: 8px;
     color: #FFFFFF;
     position: absolute;
     top: 9.7rem;
