@@ -360,6 +360,33 @@ a:link {
     z-index: -1;
 }
 
+.card__StoryMap::before{
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 102%;
+    background-image: conic-gradient(from var(--angle), transparent, #7462ff, #f48e21, #23d5ab);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 18.5px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite
+}
+.card__StoryMap::after{
+    content: "Coming Sep 2025!";
+    font-weight: 600;
+    font-size: 9px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 9.7rem;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 10s ease-in-out infinite;
+    border-radius: 10rem;
+    padding: 0.4rem 0.5rem;
+}
 .card__pic-wrap{
     box-shadow: 0px 0px 15px #e2e2e2;
     
