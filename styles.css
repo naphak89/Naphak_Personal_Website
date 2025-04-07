@@ -759,9 +759,9 @@ a:link {
     height: 100%;
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%);
     z-index: 0;
-}
+  }
 
-.section__heading{
+  .section__heading{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -771,7 +771,7 @@ a:link {
     position: relative;
     z-index: 1;
     letter-spacing: 0.0625rem;
-}
+  }
 
 .section__label-container{
     display: flex;
@@ -906,103 +906,102 @@ a:link {
     overflow: hidden;
 }
 
-/* iMessage-like tail for bubbles */
+/* Override the default ::after behavior */
 .tech-badge::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: inherit;
-    bottom: -2px;
-    left: 10px;
-    transform: rotate(45deg);
-    border-radius: 2px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
-/* Adjusted positions to keep bubbles closer to the card */
-.skill__card:nth-child(1) .tech-badge:nth-child(1) {
-    top: 5%;
-    left: -5%;
-    animation-delay: 0s;
-    background-color: rgba(0, 132, 255, 0.75);
-}
-
+/* Updated bubble positions for left-side bubbles */
 .skill__card:nth-child(1) .tech-badge:nth-child(2) {
     top: 85%;
-    right: -5%;
+    left: -10%;
     animation-delay: 1s;
     background-color: rgba(52, 183, 241, 0.75);
 }
 
-.skill__card:nth-child(1) .tech-badge:nth-child(3) {
-    top: 20%;
-    right: -5%;
-    animation-delay: 2s;
-    background-color: rgba(88, 101, 242, 0.75);
-}
-
-.skill__card:nth-child(2) .tech-badge:nth-child(1) {
-    top: 7%;
-    right: -5%;
-    animation-delay: 0.5s;
-    background-color: rgba(69, 159, 242, 0.75);
-}
-
 .skill__card:nth-child(2) .tech-badge:nth-child(2) {
     top: 90%;
-    left: -5%;
+    left: -10%;
     animation-delay: 1.5s;
     background-color: rgba(0, 122, 225, 0.75);
 }
 
-.skill__card:nth-child(2) .tech-badge:nth-child(3) {
-    top: 15%;
-    left: -5%;
-    animation-delay: 2.5s;
-    background-color: rgba(10, 132, 255, 0.75);
-}
-
 .skill__card:nth-child(3) .tech-badge:nth-child(1) {
     top: 8%;
-    left: -5%;
+    left: -10%;
     animation-delay: 0.8s;
     background-color: rgba(0, 102, 215, 0.75);
 }
 
-.skill__card:nth-child(3) .tech-badge:nth-child(2) {
-    top: 88%;
-    right: -5%;
-    animation-delay: 1.8s;
-    background-color: rgba(48, 176, 235, 0.75);
-}
-
-.skill__card:nth-child(3) .tech-badge:nth-child(3) {
-    top: 12%;
-    right: -5%;
-    animation-delay: 2.8s;
-    background-color: rgba(90, 186, 255, 0.75);
-}
-
-.skill__card:nth-child(4) .tech-badge:nth-child(1) {
-    top: 10%;
-    right: -5%;
-    animation-delay: 0.3s;
-    background-color: rgba(10, 142, 255, 0.75);
-}
-
 .skill__card:nth-child(4) .tech-badge:nth-child(2) {
     top: 92%;
-    left: -5%;
+    left: -10%;
     animation-delay: 1.3s;
     background-color: rgba(65, 124, 255, 0.75);
 }
 
 .skill__card:nth-child(4) .tech-badge:nth-child(3) {
     top: 5%;
-    left: -5%;
+    left: -10%;
     animation-delay: 2.3s;
     background-color: rgba(32, 180, 250, 0.75);
+}
+
+/* Updated bubble positions for right-side bubbles */
+.skill__card:nth-child(1) .tech-badge:nth-child(1) {
+    top: 5%;
+    right: -10%;
+    left: auto;
+    animation-delay: 0s;
+    background-color: rgba(0, 132, 255, 0.75);
+}
+
+.skill__card:nth-child(1) .tech-badge:nth-child(3) {
+    top: 20%;
+    right: -10%;
+    left: auto;
+    animation-delay: 2s;
+    background-color: rgba(88, 101, 242, 0.75);
+}
+
+.skill__card:nth-child(2) .tech-badge:nth-child(1) {
+    top: 7%;
+    right: -10%;
+    left: auto;
+    animation-delay: 0.5s;
+    background-color: rgba(69, 159, 242, 0.75);
+}
+
+.skill__card:nth-child(2) .tech-badge:nth-child(3) {
+    top: 15%;
+    right: -10%;
+    left: auto;
+    animation-delay: 2.5s;
+    background-color: rgba(10, 132, 255, 0.75);
+}
+
+.skill__card:nth-child(3) .tech-badge:nth-child(2) {
+    top: 88%;
+    right: -10%;
+    left: auto;
+    animation-delay: 1.8s;
+    background-color: rgba(48, 176, 235, 0.75);
+}
+
+.skill__card:nth-child(3) .tech-badge:nth-child(3) {
+    top: 12%;
+    right: -10%;
+    left: auto;
+    animation-delay: 2.8s;
+    background-color: rgba(90, 186, 255, 0.75);
+}
+
+.skill__card:nth-child(4) .tech-badge:nth-child(1) {
+    top: 10%;
+    right: -10%;
+    left: auto;
+    animation-delay: 0.3s;
+    background-color: rgba(10, 142, 255, 0.75);
 }
 
 /* Add subtle text shadow for better readability */
@@ -1059,7 +1058,7 @@ a:link {
     width: 100%;
     transition: transform 0.6s ease;
 }
-
+    
 .card__pic-wrap:hover .card__pic {
     transform: scale(1.05);
 }
@@ -1199,9 +1198,9 @@ a:link {
     height: 100%;
     background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.2), transparent 50%);
     z-index: 0;
-}
+  }
 
-.sectionTechnicalSkill__heading{
+  .sectionTechnicalSkill__heading{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1211,7 +1210,7 @@ a:link {
     position: relative;
     z-index: 1;
     letter-spacing: 0.0625rem;
-}
+  }
 
 .sectionTechnicalSkill__label-container{
     display: flex;
@@ -1291,7 +1290,7 @@ a:link {
 }
 
 /* Social Section */
-.socials{
+  .socials{
     height: 100%;
     width: 100%;
     display: flex;
@@ -1299,9 +1298,9 @@ a:link {
     align-items: center;
     flex-direction: column;
     padding: 1.5rem 0;
-}
+  }
 
-.socials__Title{
+  .socials__Title{
     margin: 0;
     font-weight: 600;
     font-size: 1.25rem;
@@ -1433,8 +1432,8 @@ a:link {
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
-}
-
+  }
+  
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #d2001a, #7462ff);
     border-radius: 10px;
@@ -1558,4 +1557,61 @@ a:link {
             transform: translateY(0) translateX(0);
         }
     }
+  }
+
+/* Left side bubble tails */
+.skill__card:nth-child(1) .tech-badge:nth-child(2),
+.skill__card:nth-child(2) .tech-badge:nth-child(2),
+.skill__card:nth-child(3) .tech-badge:nth-child(1),
+.skill__card:nth-child(4) .tech-badge:nth-child(2),
+.skill__card:nth-child(4) .tech-badge:nth-child(3) {
+    border-bottom-left-radius: 4px;
+}
+
+.skill__card:nth-child(1) .tech-badge:nth-child(2)::after,
+.skill__card:nth-child(2) .tech-badge:nth-child(2)::after,
+.skill__card:nth-child(3) .tech-badge:nth-child(1)::after,
+.skill__card:nth-child(4) .tech-badge:nth-child(2)::after,
+.skill__card:nth-child(4) .tech-badge:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: inherit;
+    bottom: -4px;
+    left: 6px;
+    transform: rotate(45deg);
+    border-radius: 0;
+    z-index: -1;
+}
+
+/* Right side bubble tails */
+.skill__card:nth-child(1) .tech-badge:nth-child(1),
+.skill__card:nth-child(1) .tech-badge:nth-child(3),
+.skill__card:nth-child(2) .tech-badge:nth-child(1),
+.skill__card:nth-child(2) .tech-badge:nth-child(3),
+.skill__card:nth-child(3) .tech-badge:nth-child(2),
+.skill__card:nth-child(3) .tech-badge:nth-child(3),
+.skill__card:nth-child(4) .tech-badge:nth-child(1) {
+    border-bottom-right-radius: 4px;
+}
+
+.skill__card:nth-child(1) .tech-badge:nth-child(1)::after,
+.skill__card:nth-child(1) .tech-badge:nth-child(3)::after,
+.skill__card:nth-child(2) .tech-badge:nth-child(1)::after,
+.skill__card:nth-child(2) .tech-badge:nth-child(3)::after,
+.skill__card:nth-child(3) .tech-badge:nth-child(2)::after,
+.skill__card:nth-child(3) .tech-badge:nth-child(3)::after,
+.skill__card:nth-child(4) .tech-badge:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: inherit;
+    bottom: -4px;
+    right: 6px;
+    left: auto;
+    transform: rotate(45deg);
+    border-radius: 0;
+    z-index: -1;
 }
