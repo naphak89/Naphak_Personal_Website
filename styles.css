@@ -324,6 +324,11 @@ body::before {
     }
 }
 
+@media (max-width: 420px) {
+    .hero__eyebrow {
+        font-size: 0.7rem !important;
+    }
+}
 /* iPhone SE, Small Phones */
 @media (max-width: 395px) {
     .hero__title-name {
