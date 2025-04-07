@@ -200,6 +200,28 @@ body::before {
     .hero__title-name {
         font-size: 2.5rem;
     }
+
+    /* Stack bubbles vertically for better viewing on tablets */
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        top: 10%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(2),
+    .skill__card:nth-child(2) .tech-badge:nth-child(2),
+    .skill__card:nth-child(3) .tech-badge:nth-child(2),
+    .skill__card:nth-child(4) .tech-badge:nth-child(2) {
+        top: 85%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(3),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        top: 25%;
+    }
 }
 
 /* iPad Mini, iPad Air (portrait) */
@@ -342,17 +364,38 @@ body::before {
     }
     
     .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        left: -6%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(2),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        right: -6%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
     .skill__card:nth-child(2) .tech-badge:nth-child(1),
     .skill__card:nth-child(3) .tech-badge:nth-child(1),
     .skill__card:nth-child(4) .tech-badge:nth-child(1) {
-        left: -5%;
+        top: 10%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(2),
+    .skill__card:nth-child(2) .tech-badge:nth-child(2),
+    .skill__card:nth-child(3) .tech-badge:nth-child(2),
+    .skill__card:nth-child(4) .tech-badge:nth-child(2) {
+        top: 85%;
     }
     
     .skill__card:nth-child(1) .tech-badge:nth-child(3),
     .skill__card:nth-child(2) .tech-badge:nth-child(3),
     .skill__card:nth-child(3) .tech-badge:nth-child(3),
     .skill__card:nth-child(4) .tech-badge:nth-child(3) {
-        right: -5%;
+        top: 25%;
     }
 }
 
@@ -857,6 +900,10 @@ a:link {
     transition: all 0.3s ease;
     animation: float 8s ease-in-out infinite;
     z-index: 3;
+    max-width: 120px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* iMessage-like tail for bubbles */
@@ -873,87 +920,87 @@ a:link {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjusted positions to keep bubbles away from the description */
+/* Adjusted positions to keep bubbles closer to the card */
 .skill__card:nth-child(1) .tech-badge:nth-child(1) {
     top: 5%;
-    left: -10%;
+    left: -5%;
     animation-delay: 0s;
     background-color: rgba(0, 132, 255, 0.75);
 }
 
 .skill__card:nth-child(1) .tech-badge:nth-child(2) {
     top: 85%;
-    right: -12%;
+    right: -5%;
     animation-delay: 1s;
     background-color: rgba(52, 183, 241, 0.75);
 }
 
 .skill__card:nth-child(1) .tech-badge:nth-child(3) {
     top: 20%;
-    right: -14%;
+    right: -5%;
     animation-delay: 2s;
     background-color: rgba(88, 101, 242, 0.75);
 }
 
 .skill__card:nth-child(2) .tech-badge:nth-child(1) {
     top: 7%;
-    right: -12%;
+    right: -5%;
     animation-delay: 0.5s;
     background-color: rgba(69, 159, 242, 0.75);
 }
 
 .skill__card:nth-child(2) .tech-badge:nth-child(2) {
     top: 90%;
-    left: -10%;
+    left: -5%;
     animation-delay: 1.5s;
     background-color: rgba(0, 122, 225, 0.75);
 }
 
 .skill__card:nth-child(2) .tech-badge:nth-child(3) {
     top: 15%;
-    left: -14%;
+    left: -5%;
     animation-delay: 2.5s;
     background-color: rgba(10, 132, 255, 0.75);
 }
 
 .skill__card:nth-child(3) .tech-badge:nth-child(1) {
     top: 8%;
-    left: -12%;
+    left: -5%;
     animation-delay: 0.8s;
     background-color: rgba(0, 102, 215, 0.75);
 }
 
 .skill__card:nth-child(3) .tech-badge:nth-child(2) {
     top: 88%;
-    right: -10%;
+    right: -5%;
     animation-delay: 1.8s;
     background-color: rgba(48, 176, 235, 0.75);
 }
 
 .skill__card:nth-child(3) .tech-badge:nth-child(3) {
     top: 12%;
-    right: -14%;
+    right: -5%;
     animation-delay: 2.8s;
     background-color: rgba(90, 186, 255, 0.75);
 }
 
 .skill__card:nth-child(4) .tech-badge:nth-child(1) {
     top: 10%;
-    right: -12%;
+    right: -5%;
     animation-delay: 0.3s;
     background-color: rgba(10, 142, 255, 0.75);
 }
 
 .skill__card:nth-child(4) .tech-badge:nth-child(2) {
     top: 92%;
-    left: -10%;
+    left: -5%;
     animation-delay: 1.3s;
     background-color: rgba(65, 124, 255, 0.75);
 }
 
 .skill__card:nth-child(4) .tech-badge:nth-child(3) {
     top: 5%;
-    left: -14%;
+    left: -5%;
     animation-delay: 2.3s;
     background-color: rgba(32, 180, 250, 0.75);
 }
@@ -970,16 +1017,16 @@ a:link {
         transform: translateY(0) translateX(0) rotate(0deg);
     }
     20% {
-        transform: translateY(-15px) translateX(10px) rotate(-2deg);
+        transform: translateY(-6px) translateX(5px) rotate(-1deg);
     }
     40% {
-        transform: translateY(10px) translateX(-15px) rotate(2deg);
+        transform: translateY(5px) translateX(-6px) rotate(1deg);
     }
     60% {
-        transform: translateY(-12px) translateX(-8px) rotate(0deg);
+        transform: translateY(-5px) translateX(-3px) rotate(0deg);
     }
     80% {
-        transform: translateY(8px) translateX(12px) rotate(-1deg);
+        transform: translateY(3px) translateX(5px) rotate(-1deg);
     }
     100% {
         transform: translateY(0) translateX(0) rotate(0deg);
@@ -1395,4 +1442,120 @@ a:link {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, #7462ff, #23d5ab);
+}
+
+/* Make tech bubbles responsive */
+@media (max-width: 1200px) {
+    /* Adjust bubble positions for larger tablets and small desktops */
+    .tech-badge {
+        font-size: 0.75rem;
+        max-width: 110px;
+    }
+    
+    /* Reduce how far the bubbles float outside the card */
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        left: -4%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(2),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        right: -4%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust bubbles for tablets */
+    .tech-badge {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        max-width: 100px;
+    }
+    
+    /* Adjust positions to stay closer to the card */
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        left: -3%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(2),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        right: -3%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile styles for tech bubbles */
+    .tech-badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        max-width: 90px;
+    }
+    
+    /* Reduce the bubble tail size */
+    .tech-badge::after {
+        width: 6px;
+        height: 6px;
+    }
+    
+    /* Keep bubbles closer to the card edges */
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        left: -2%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(3),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        right: -2%;
+    }
+}
+
+@media (max-width: 360px) {
+    /* Very small mobile screens */
+    .tech-badge {
+        font-size: 0.6rem;
+        padding: 3px 6px;
+        max-width: 80px;
+    }
+    
+    /* Keep bubbles very close to the card */
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        left: -1%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(3),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        right: -1%;
+    }
+
+    /* Minimal animation for very small screens */
+    @keyframes float {
+        0% {
+            transform: translateY(0) translateX(0);
+        }
+        50% {
+            transform: translateY(-3px) translateX(2px);
+        }
+        100% {
+            transform: translateY(0) translateX(0);
+        }
+    }
 }
