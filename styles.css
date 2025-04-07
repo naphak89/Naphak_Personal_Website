@@ -20,25 +20,78 @@ html, body {
 }
 
 .navbar {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 1rem;
-    background-color: #FFFFFF;
-    min-width: 200;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    margin: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-.logo__container {
+.navbar__container {
     display: flex;
-    align-items: center; /* Vertically center the logo */
-    margin-left: 5rem; 
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__item {
+    text-decoration: none;
+    color: #3f3f3f;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.navbar__item:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    transition: width 0.3s ease;
+}
+
+.navbar__item:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar__item:hover:after {
+    width: 100%;
 }
 
 /* Logo adjustment */
 .logo {
-    padding: 0; /* Remove padding to avoid misalignment */
+    padding: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 /* Responsive Design */
@@ -51,7 +104,26 @@ html, body {
     }
 
     .navbar {
-        flex-direction: column; /* Stack items vertically on small screens */
+        display: flex;
+        margin: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        
+    }
+    
+    .navbar__container {
+        
+        padding: 0rem 0.5rem;
+    }
+    
+    .navbar__menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .navbar__item{
+        font-size: 0.8rem;
     }
 
     .logo {
@@ -84,7 +156,13 @@ html, body {
 
 @media (max-width: 480px) {
     .navbar {
-        padding: 0.5rem; /* Adjust padding for very small screens */
+        margin: 0.25rem;
+        padding: 0.5rem;
+    }
+    
+    .navbar__menu {
+        gap: 0.5rem;
+        font-size: 0.8rem;
     }
 
     .logo {
@@ -138,7 +216,7 @@ html, body {
     /* background-color: #ffffff; */
     min-width: 100%;
     padding-bottom: 5rem;
-    
+    margin-top: 5rem;
 }
 
 .hero__title-container {
