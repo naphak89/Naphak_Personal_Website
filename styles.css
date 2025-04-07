@@ -330,6 +330,30 @@ body::before {
         width: 100%;
         padding: 1rem;
     }
+
+    .card__tech-stack {
+        gap: 0.3rem;
+        margin: 0 0.5rem 1rem 0.5rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(1),
+    .skill__card:nth-child(2) .tech-badge:nth-child(1),
+    .skill__card:nth-child(3) .tech-badge:nth-child(1),
+    .skill__card:nth-child(4) .tech-badge:nth-child(1) {
+        left: -5%;
+    }
+    
+    .skill__card:nth-child(1) .tech-badge:nth-child(3),
+    .skill__card:nth-child(2) .tech-badge:nth-child(3),
+    .skill__card:nth-child(3) .tech-badge:nth-child(3),
+    .skill__card:nth-child(4) .tech-badge:nth-child(3) {
+        right: -5%;
+    }
 }
 
 @media (max-width: 420px) {
@@ -737,7 +761,7 @@ a:link {
     background-color: #f9f9f9;
 }
 
-.skill__card{
+.skill__card {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -747,9 +771,12 @@ a:link {
     text-align: center;
     border-radius: 1rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    padding-bottom: 1rem;
+    z-index: 1;
+    margin: 1rem 1.5rem;
 }
 
 .skill__card:hover {
@@ -757,7 +784,7 @@ a:link {
     box-shadow: 0 0.9375rem 2.1875rem rgba(0, 0, 0, 0.1);
 }
 
-.skill__card::before{
+.skill__card::before {
     content: "";
     background-color: transparent;
     height: 100%;
@@ -766,11 +793,25 @@ a:link {
     z-index: -1;
 }
 
+.skill__card::after {
+    content: none;
+    display: none;
+}
 
+.skill__card:hover::after {
+    opacity: 0;
+}
+
+/* Fix for StoryMap card */
 .card__StoryMap .card__pic-wrap {
     position: relative;
 }
 
+.card__StoryMap::after {
+    display: block !important;
+}
+
+/* Remove conflicting rule */
 .card__StoryMap .card__pic-wrap::after {
     content: "Launching Sep 2025!";
     font-weight: 600;
@@ -789,10 +830,168 @@ a:link {
     box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
     white-space: nowrap;
     z-index: 2;
+    display: block !important;
 }
 
-.card__StoryMap::after {
-    display: none;
+.card__tech-stack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-badge {
+    position: absolute;
+    background-color: rgba(0, 132, 255, 0.75);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    cursor: default;
+    transition: all 0.3s ease;
+    animation: float 8s ease-in-out infinite;
+    z-index: 3;
+}
+
+/* iMessage-like tail for bubbles */
+.tech-badge::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: inherit;
+    bottom: -2px;
+    left: 10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjusted positions to keep bubbles away from the description */
+.skill__card:nth-child(1) .tech-badge:nth-child(1) {
+    top: 5%;
+    left: -10%;
+    animation-delay: 0s;
+    background-color: rgba(0, 132, 255, 0.75);
+}
+
+.skill__card:nth-child(1) .tech-badge:nth-child(2) {
+    top: 85%;
+    right: -12%;
+    animation-delay: 1s;
+    background-color: rgba(52, 183, 241, 0.75);
+}
+
+.skill__card:nth-child(1) .tech-badge:nth-child(3) {
+    top: 20%;
+    right: -14%;
+    animation-delay: 2s;
+    background-color: rgba(88, 101, 242, 0.75);
+}
+
+.skill__card:nth-child(2) .tech-badge:nth-child(1) {
+    top: 7%;
+    right: -12%;
+    animation-delay: 0.5s;
+    background-color: rgba(69, 159, 242, 0.75);
+}
+
+.skill__card:nth-child(2) .tech-badge:nth-child(2) {
+    top: 90%;
+    left: -10%;
+    animation-delay: 1.5s;
+    background-color: rgba(0, 122, 225, 0.75);
+}
+
+.skill__card:nth-child(2) .tech-badge:nth-child(3) {
+    top: 15%;
+    left: -14%;
+    animation-delay: 2.5s;
+    background-color: rgba(10, 132, 255, 0.75);
+}
+
+.skill__card:nth-child(3) .tech-badge:nth-child(1) {
+    top: 8%;
+    left: -12%;
+    animation-delay: 0.8s;
+    background-color: rgba(0, 102, 215, 0.75);
+}
+
+.skill__card:nth-child(3) .tech-badge:nth-child(2) {
+    top: 88%;
+    right: -10%;
+    animation-delay: 1.8s;
+    background-color: rgba(48, 176, 235, 0.75);
+}
+
+.skill__card:nth-child(3) .tech-badge:nth-child(3) {
+    top: 12%;
+    right: -14%;
+    animation-delay: 2.8s;
+    background-color: rgba(90, 186, 255, 0.75);
+}
+
+.skill__card:nth-child(4) .tech-badge:nth-child(1) {
+    top: 10%;
+    right: -12%;
+    animation-delay: 0.3s;
+    background-color: rgba(10, 142, 255, 0.75);
+}
+
+.skill__card:nth-child(4) .tech-badge:nth-child(2) {
+    top: 92%;
+    left: -10%;
+    animation-delay: 1.3s;
+    background-color: rgba(65, 124, 255, 0.75);
+}
+
+.skill__card:nth-child(4) .tech-badge:nth-child(3) {
+    top: 5%;
+    left: -14%;
+    animation-delay: 2.3s;
+    background-color: rgba(32, 180, 250, 0.75);
+}
+
+/* Add subtle text shadow for better readability */
+.tech-badge {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+}
+
+/* Refine float animation for more natural movement */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    20% {
+        transform: translateY(-15px) translateX(10px) rotate(-2deg);
+    }
+    40% {
+        transform: translateY(10px) translateX(-15px) rotate(2deg);
+    }
+    60% {
+        transform: translateY(-12px) translateX(-8px) rotate(0deg);
+    }
+    80% {
+        transform: translateY(8px) translateX(12px) rotate(-1deg);
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+}
+
+/* Add a subtle glow effect on hover */
+.tech-badge:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: rgba(0, 102, 225, 0.95);
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 120, 255, 0.4);
 }
 
 .card__pic-wrap{
@@ -808,7 +1007,7 @@ a:link {
 }
 
 .card__pic{
-    border-radius: 12px;
+    border-radius: 0.75rem;
     height: 100%;
     width: 100%;
     transition: transform 0.6s ease;
@@ -830,13 +1029,22 @@ a:link {
     margin: 1rem;
 }
 
-.card__text-container{
+.card__text-container {
     margin-top: 1.25rem;
-    margin-bottom: 1.5625rem;
+    margin-bottom: 1rem;
     padding: 0 1.25rem;
+    min-height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 0.5rem;
 }
 
-.card__title{
+.card__title {
     margin: 0 0 0.625rem 0;
     font-weight: 700;
     font-size: 1.375rem;
@@ -845,29 +1053,41 @@ a:link {
     animation: gradient__background 15s ease-in-out infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 6;
 }
 
-.card__description{
+.card__description {
     color: #555;
     padding: 0 0.625rem;
     margin: 0;
     font-size: 0.8125rem;
     line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 4.2rem;
+    position: relative;
+    z-index: 6;
 }
 
-.card__button{
+.card__button {
     width: 8.125rem;
     height: 2.375rem;
     background-color: #3f3f3f;
     border: none;
     color: #f0f0f0;
     border-radius: 1.875rem;
-    margin-bottom: 2.1875rem;
+    margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
     position: relative;
     transition: all 0.3s ease;
     overflow: hidden;
+    cursor: pointer;
+    z-index: 5;
 }
 
 .card__button::before {
