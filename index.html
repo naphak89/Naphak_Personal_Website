@@ -38,7 +38,7 @@
                     <p class="hero__greeting">Hello, I'm</p>
                     <h1 class="hero__title-name addAnimation"><span class="hero__title-highlight">Naphak Jaengjaikul</span></h1>
                 </div>
-                <p class="hero__title-label addAnimation">Building things that actually matter, not just ‘AI-powered’ nonsense</p>
+                <p class="hero__title-label addAnimation">Building things that actually matter, not just 'AI-powered' nonsense</p>
                 <div class="hero__cta">
                     <a class="cv-button" href="Naphak_Jaengjaikul_resume_dev.pdf" target="_blank">
                         <span class="cv-button__text">View Resume</span>
@@ -180,3 +180,71 @@
     
     
   </body>
+
+  <script>
+    // Fire emoji effect for CV button
+    document.addEventListener('DOMContentLoaded', function() {
+      const cvButton = document.querySelector('.cv-button');
+      
+      cvButton.addEventListener('mouseenter', function(e) {
+        // Create multiple emojis on hover
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => {
+            createFireEmoji(e.clientX, e.clientY);
+          }, i * 100);
+        }
+      });
+      
+      function createFireEmoji(x, y) {
+        const emoji = document.createElement('div');
+        emoji.innerHTML = '🔥';
+        emoji.className = 'fire-emoji';
+        
+        // Randomize initial positions slightly
+        const buttonRect = cvButton.getBoundingClientRect();
+        const startX = buttonRect.left + Math.random() * buttonRect.width;
+        const startY = buttonRect.top;
+        
+        // Set initial position
+        emoji.style.left = `${startX}px`;
+        emoji.style.top = `${startY}px`;
+        
+        // Random horizontal velocity
+        const vx = (Math.random() - 0.5) * 10;
+        // Random initial upward velocity
+        const vy = -Math.random() * 10 - 5;
+        
+        // Add to body
+        document.body.appendChild(emoji);
+        
+        // Animation variables
+        let posX = startX;
+        let posY = startY;
+        let velocityY = vy;
+        let velocityX = vx;
+        const gravity = 0.5;
+        
+        // Animation function
+        function animate() {
+          velocityY += gravity;
+          posY += velocityY;
+          posX += velocityX;
+          
+          emoji.style.top = `${posY}px`;
+          emoji.style.left = `${posX}px`;
+          
+          // Remove when it falls below screen
+          if (posY > window.innerHeight) {
+            document.body.removeChild(emoji);
+            return;
+          }
+          
+          requestAnimationFrame(animate);
+        }
+        
+        // Start animation
+        requestAnimationFrame(animate);
+      }
+    });
+  </script>
+</html>
