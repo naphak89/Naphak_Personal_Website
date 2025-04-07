@@ -269,10 +269,15 @@ body::before {
     
     .profilePic__container {
         max-width: 220px;
+        height: auto;
+        overflow: hidden;
     }
     
     .profilePic {
         height: 220px;
+        width: 100%;
+        object-position: center;
+        max-width: 100%;
     }
 
     .navbar {
@@ -343,10 +348,12 @@ body::before {
     
     .profilePic__container {
         max-width: 180px;
+        height: auto;
     }
     
     .profilePic {
         height: 180px;
+        object-position: center;
     }
     
     .cv-button {
@@ -529,11 +536,16 @@ body::before {
 .cv-button:hover .cv-button__text,
 .cv-button:hover .cv-button__icon {
     transform: translateX(5px);
+    color: #fff;
 }
 
 .cv-button:hover .cv-button__backdrop {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(116, 98, 255, 0.3);
+}
+
+.cv-button:hover {
+    color: #fff;
 }
 
 .profilePic__container {
