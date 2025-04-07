@@ -201,16 +201,21 @@ body::before {
 
 /* iPad Mini, iPad Air (portrait) */
 @media (max-width: 820px) and (min-width: 768px) {
+    .hero__content-wrapper {
+        gap: 2rem;
+        padding: 0 3rem;
+    }
+    
     .hero__title-name {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     
     .profilePic__container {
-        max-width: 320px;
+        max-width: 300px;
     }
     
     .profilePic {
-        height: 320px;
+        height: 300px;
     }
 }
 
@@ -221,19 +226,27 @@ body::before {
         padding: 1rem 0 2rem 0;
     }
     
+    .hero__content-wrapper {
+        padding: 0 1.5rem;
+    }
+    
+    .hero__text-container {
+        padding: 0 0.5rem;
+    }
+    
     .hero__eyebrow {
-        font-size: 0.7rem;
-        letter-spacing: 1.5px;
+        font-size: 0.65rem;
+        letter-spacing: 1.2px;
     }
     
     .hero__title-name {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         line-height: 1.4;
         margin-bottom: 0.5rem;
     }
     
     .hero__title-label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         margin-bottom: 1.8rem;
     }
     
