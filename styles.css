@@ -1125,7 +1125,7 @@ a:link {
     background-color: #3f3f3f;
     border: none;
     color: #f0f0f0;
-    border-radius: 1.875rem;
+    border-radius: 0.8rem;
     margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
@@ -1151,11 +1151,13 @@ a:link {
 
 .card__button:hover::before {
     opacity: 1;
+    
 }
 
 .card__button:hover {
     transform: translateY(-0.125rem);
     box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
+    
 }
 
 .card__link {
@@ -1235,6 +1237,7 @@ a:link {
 
 .technicalSkill{
     margin: 4rem 2rem;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1614,4 +1617,4 @@ a:link {
     transform: rotate(45deg);
     border-radius: 0;
     z-index: -1;
-}
+  }
