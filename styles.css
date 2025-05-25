@@ -24,7 +24,7 @@ html, body {
 body::before {
     content: "";
     position: fixed;
-    top: -100px;
+    top: -5rem;
     left: 0;
     width: 100%;
     height: 250px;
@@ -156,6 +156,25 @@ body::before {
         height: 18.75rem;
     }
 
+    .profilePic__container::before {
+        font-size: 1.5rem;
+        animation-duration: 6s;
+    }
+
+    .profilePic__container::after {
+        font-size: 1.3rem;
+        animation-duration: 5s;
+    }
+
+    .tropical-icecream,
+    .tropical-pineapple,
+    .tropical-rainbow,
+    .tropical-island,
+    .tropical-coconut,
+    .tropical-cocktail {
+        font-size: 1.2rem;
+    }
+
     .logo__container {
         margin: 0 1rem; /* Reduce margin on smaller screens */
     }
@@ -273,6 +292,25 @@ body::before {
         max-width: 100%;
     }
 
+    .profilePic__container::before {
+        font-size: 1.2rem;
+        animation-duration: 5s;
+    }
+
+    .profilePic__container::after {
+        font-size: 1rem;
+        animation-duration: 4s;
+    }
+
+    .tropical-icecream,
+    .tropical-pineapple,
+    .tropical-rainbow,
+    .tropical-island,
+    .tropical-coconut,
+    .tropical-cocktail {
+        font-size: 0.9rem;
+    }
+
     .navbar {
         width: 90%;
         margin: 1rem auto;
@@ -369,6 +407,25 @@ body::before {
         height: 11.25rem;
         
     }
+
+    .profilePic__container::before {
+        font-size: 1rem;
+        animation-duration: 4s;
+    }
+
+    .profilePic__container::after {
+        font-size: 0.8rem;
+        animation-duration: 3s;
+    }
+
+    .tropical-icecream,
+    .tropical-pineapple,
+    .tropical-rainbow,
+    .tropical-island,
+    .tropical-coconut,
+    .tropical-cocktail {
+        font-size: 0.7rem;
+    }
     
     .cv-button {
         padding: 0.5rem 1rem;
@@ -401,7 +458,7 @@ body::before {
     padding: 2rem 0 5rem 0;
     margin-top: 6rem;
     position: relative;
-    overflow: hidden;
+   
 }
 
 .hero__content-wrapper {
@@ -570,11 +627,430 @@ body::before {
     border-radius: 3.5rem;
     transition: all 0.3s ease;
     object-position: 0% 10%;
+    position: relative;
+    z-index: 2;
 }
 
 .profilePic:hover {
     transform: translateY(-5px);
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Tropical animals animation around profile picture */
+.profilePic__container::before {
+    content: "🐍";
+    position: absolute;
+    font-size: 2rem;
+    z-index: 3;
+    animation: snake-crawl 8s ease-in-out infinite;
+    transform-origin: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.profilePic__container::after {
+    content: "🦎";
+    position: absolute;
+    font-size: 1.8rem;
+    z-index: 3;
+    animation: lizard-dance 6s ease-in-out infinite 2s;
+    transform-origin: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    top: 20%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+/* Add more tropical creatures */
+.profilePic__container {
+    position: relative;
+}
+
+.profilePic__container .tropical-creature {
+    position: absolute;
+    font-size: 1.5rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.profilePic__container .tropical-creature:nth-child(3) {
+    content: "🦜";
+    animation: parrot-fly 7s ease-in-out infinite 1s;
+}
+
+.profilePic__container .tropical-creature:nth-child(4) {
+    content: "🐸";
+    animation: frog-hop 5s ease-in-out infinite 3s;
+}
+
+.profilePic__container .tropical-creature:nth-child(5) {
+    content: "🦋";
+    animation: butterfly-flutter 9s ease-in-out infinite 4s;
+}
+
+@keyframes snake-crawl {
+    0% {
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(1);
+    }
+    8% {
+        top: 30%;
+        left: 95%;
+        transform: translate(-50%, -50%) rotate(200deg) scale(1.2) rotateY(180deg);
+    }
+    16% {
+        top: 10%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(240deg) scale(0.8);
+    }
+    25% {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(270deg) scale(1.1) rotateX(360deg);
+    }
+    33% {
+        top: 10%;
+        left: 20%;
+        transform: translate(-50%, -50%) rotate(300deg) scale(0.9);
+    }
+    41% {
+        top: 30%;
+        left: 5%;
+        transform: translate(-50%, -50%) rotate(340deg) scale(1.3) rotateY(360deg);
+    }
+    50% {
+        top: 50%;
+        left: 0%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    58% {
+        top: 70%;
+        left: 5%;
+        transform: translate(-50%, -50%) rotate(20deg) scale(0.7) rotateZ(180deg);
+    }
+    66% {
+        top: 90%;
+        left: 20%;
+        transform: translate(-50%, -50%) rotate(60deg) scale(1.2);
+    }
+    75% {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1) rotateX(180deg);
+    }
+    83% {
+        top: 90%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(120deg) scale(0.9);
+    }
+    91% {
+        top: 70%;
+        left: 95%;
+        transform: translate(-50%, -50%) rotate(160deg) scale(1.1) rotateY(180deg);
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(1);
+    }
+}
+
+@keyframes lizard-dance {
+    0% {
+        top: 20%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+    15% {
+        top: 5%;
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.3) rotateY(360deg);
+    }
+    30% {
+        top: 15%;
+        left: 30%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.8) rotateX(180deg);
+    }
+    45% {
+        top: 40%;
+        left: 10%;
+        transform: translate(-50%, -50%) rotate(270deg) scale(1.2);
+    }
+    60% {
+        top: 70%;
+        left: 20%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(0.9) rotateZ(360deg);
+    }
+    75% {
+        top: 85%;
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(450deg) scale(1.1);
+    }
+    90% {
+        top: 70%;
+        left: 90%;
+        transform: translate(-50%, -50%) rotate(500deg) scale(0.7) rotateY(180deg);
+    }
+    100% {
+        top: 20%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
+
+/* Tropical refreshment animations */
+.tropical-icecream {
+    position: absolute;
+    font-size: 1.6rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: icecream-float 6s ease-in-out infinite 1s;
+    top: 10%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+.tropical-pineapple {
+    position: absolute;
+    font-size: 1.5rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: pineapple-spin 7s ease-in-out infinite 2s;
+    top: 85%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.tropical-rainbow {
+    position: absolute;
+    font-size: 1.4rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: rainbow-arc 8s ease-in-out infinite 0.5s;
+    top: 0%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.tropical-island {
+    position: absolute;
+    font-size: 1.3rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: island-drift 9s ease-in-out infinite 3s;
+    top: 95%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.tropical-coconut {
+    position: absolute;
+    font-size: 1.4rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: coconut-bounce 5s ease-in-out infinite 1.5s;
+    top: 30%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+}
+
+.tropical-cocktail {
+    position: absolute;
+    font-size: 1.5rem;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: cocktail-swirl 6.5s ease-in-out infinite 4s;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes icecream-float {
+    0% {
+        top: 10%;
+        left: 85%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    25% {
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.3) rotateY(180deg);
+    }
+    50% {
+        top: 10%;
+        left: 15%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.8) rotateX(360deg);
+    }
+    75% {
+        top: 20%;
+        left: 5%;
+        transform: translate(-50%, -50%) rotate(270deg) scale(1.2) rotateZ(180deg);
+    }
+    100% {
+        top: 10%;
+        left: 85%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes pineapple-spin {
+    0% {
+        top: 85%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    20% {
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(144deg) scale(1.4) rotateY(360deg);
+    }
+    40% {
+        top: 85%;
+        left: 20%;
+        transform: translate(-50%, -50%) rotate(288deg) scale(0.7) rotateX(180deg);
+    }
+    60% {
+        top: 70%;
+        left: 10%;
+        transform: translate(-50%, -50%) rotate(432deg) scale(1.1) rotateZ(360deg);
+    }
+    80% {
+        top: 75%;
+        left: 5%;
+        transform: translate(-50%, -50%) rotate(576deg) scale(0.9) rotateY(180deg);
+    }
+    100% {
+        top: 85%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(720deg) scale(1);
+    }
+}
+
+@keyframes rainbow-arc {
+    0% {
+        top: 0%;
+        left: 30%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    25% {
+        top: -5%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.5) rotateY(180deg);
+    }
+    50% {
+        top: 0%;
+        left: 70%;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.2) rotateX(360deg);
+    }
+    75% {
+        top: 5%;
+        left: 85%;
+        transform: translate(-50%, -50%) rotate(135deg) scale(0.8) rotateZ(180deg);
+    }
+    100% {
+        top: 0%;
+        left: 30%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(1);
+    }
+}
+
+@keyframes island-drift {
+    0% {
+        top: 95%;
+        left: 25%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    20% {
+        top: 100%;
+        left: 45%;
+        transform: translate(-50%, -50%) rotate(72deg) scale(1.2) rotateY(180deg);
+    }
+    40% {
+        top: 95%;
+        left: 65%;
+        transform: translate(-50%, -50%) rotate(144deg) scale(0.8) rotateX(180deg);
+    }
+    60% {
+        top: 90%;
+        left: 80%;
+        transform: translate(-50%, -50%) rotate(216deg) scale(1.3) rotateZ(360deg);
+    }
+    80% {
+        top: 85%;
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(288deg) scale(0.9) rotateY(360deg);
+    }
+    100% {
+        top: 95%;
+        left: 25%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes coconut-bounce {
+    0% {
+        top: 30%;
+        left: 0%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    25% {
+        top: 15%;
+        left: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.4) rotateY(360deg);
+    }
+    50% {
+        top: 45%;
+        left: 15%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.7) rotateX(180deg);
+    }
+    75% {
+        top: 65%;
+        left: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) scale(1.2) rotateZ(360deg);
+    }
+    100% {
+        top: 30%;
+        left: 0%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes cocktail-swirl {
+    0% {
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    16% {
+        top: 65%;
+        left: 95%;
+        transform: translate(-50%, -50%) rotate(60deg) scale(1.3) rotateY(180deg);
+    }
+    33% {
+        top: 80%;
+        left: 85%;
+        transform: translate(-50%, -50%) rotate(120deg) scale(0.8) rotateX(360deg);
+    }
+    50% {
+        top: 85%;
+        left: 70%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.1) rotateZ(180deg);
+    }
+    66% {
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(240deg) scale(0.9) rotateY(360deg);
+    }
+    83% {
+        top: 60%;
+        left: 35%;
+        transform: translate(-50%, -50%) rotate(300deg) scale(1.2) rotateX(180deg);
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
 }
 
 .CVcard {
@@ -829,7 +1305,7 @@ a:link {
     width: 100%;
     height: 36px;
     margin: 1.5rem 0 1rem;
-    position: relative;
+    position: relative; 
 }
 
 .tech-badges-container {
@@ -887,7 +1363,7 @@ a:link {
     transition: transform 0.6s ease;
 }
     
-
+    
 
 .card__pic-ReTrade{
     object-fit: contain;
@@ -1339,4 +1815,4 @@ a:link {
         from { transform: translateX(0); }
         to { transform: translateX(calc(-100% - 8px)); }
     }
-}
+  }
