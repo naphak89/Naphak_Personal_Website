@@ -9,9 +9,7 @@
 html, body {
     font-family: "Poppins", Times, serif;
     width: 100%;
-    /* background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
-    background-size: 300% 300%;
-    animation: gradient__background 10s ease-in-out infinite; */
+    background: #ffffff;
     color: #3f3f3f;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     display: flex;
@@ -21,17 +19,72 @@ html, body {
     position: relative;
 }
 
+/* Beautiful tropical summer gradient background with blur effect */
 body::before {
     content: "";
     position: fixed;
-    top: -100px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 250px;
-    background: radial-gradient(ellipse at center, rgba(210, 0, 26, 0.4), rgba(116, 98, 255, 0.4), rgba(244, 142, 33, 0.4), rgba(35, 213, 171, 0.4), transparent 70%);
-    filter: blur(70px);
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 183, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(72, 187, 120, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(99, 179, 237, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 10% 10%, rgba(196, 181, 253, 0.15) 0%, transparent 50%);
+    filter: blur(40px);
+    z-index: -2;
+    opacity: 0.8;
+    animation: float-background 20s ease-in-out infinite;
+}
+
+/* Additional animated gradient orbs */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 60% 70%, rgba(244, 142, 33, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 30% 30%, rgba(35, 213, 171, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 70% 10%, rgba(210, 0, 26, 0.1) 0%, transparent 40%);
+    filter: blur(60px);
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.6;
+    animation: float-background-reverse 25s ease-in-out infinite;
+}
+
+@keyframes float-background {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+    25% {
+        transform: translateX(20px) translateY(-30px) scale(1.1);
+    }
+    50% {
+        transform: translateX(-10px) translateY(20px) scale(0.9);
+    }
+    75% {
+        transform: translateX(30px) translateY(10px) scale(1.05);
+    }
+}
+
+@keyframes float-background-reverse {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+    25% {
+        transform: translateX(-25px) translateY(20px) scale(0.95);
+    }
+    50% {
+        transform: translateX(15px) translateY(-25px) scale(1.1);
+    }
+    75% {
+        transform: translateX(-20px) translateY(-10px) scale(1.02);
+    }
 }
 
 .navbar {
@@ -326,10 +379,7 @@ body::before {
         width: 100%;
     }
     
-    .technicalSkill__Text-Container {
-        width: 100%;
-        padding: 1rem;
-    }
+
 
     .card__tech-stack {
         gap: 0.3rem;
@@ -508,7 +558,7 @@ body::before {
     transition: all 0.3s ease;
     color: #fff;
     overflow: hidden;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 }
 
 .cv-button__text {
@@ -560,25 +610,16 @@ body::before {
 }
 
 .profile-backdrop {
-    position: absolute;
-    top: 1.25rem;
-    left: 1.25rem;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #d2001a, #7462ff);
-    opacity: 0.1;
-    border-radius: 0.625rem;
-    z-index: -1;
+  
 }
 
 .profilePic {
     object-fit: cover;
     height: 21.875rem;
     width: 100%;
-    border-radius: 0.625rem;
-    box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.2);
+    border-radius: 3.5rem;
     transition: all 0.3s ease;
-    object-position: 0% 20%;
+    object-position: 0% 10%;
 }
 
 .profilePic:hover {
@@ -838,7 +879,7 @@ a:link {
     width: 100%;
     height: 36px;
     margin: 1.5rem 0 1rem;
-    position: relative;
+    position: relative; 
 }
 
 .tech-badges-container {
@@ -896,7 +937,7 @@ a:link {
     transition: transform 0.6s ease;
 }
     
-
+    
 
 .card__pic-ReTrade{
     object-fit: contain;
@@ -1055,61 +1096,226 @@ a:link {
     font-size: 0.9rem;
 }
 
-.technicalSkill{
-    margin: 4rem 2rem;
-    width: 80%;
+/* Modern Skills Container */
+.skills__modern-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 3rem;
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 1.25rem;
-}
-
-.technicalSkillImage__Container{
-    width: 20rem;
-    min-width: 20rem;
-    object-fit: cover;
-    border-radius: 1rem;
-    box-shadow: 0 0.9375rem 2.1875rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.technicalSkillImage__Container:hover {
-    transform: scale(1.02);
-}
-
-.technicalSkill__Text-Container{
-    width: 21.875rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
-    padding: 1.5rem 2rem;
+    gap: 4rem;
+    position: relative;
+}
+
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.skill__modern-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill__modern-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 15s ease-in-out infinite;
+}
+
+.skill__modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.skill__icon-container {
+    width: 4rem;
+    height: 4rem;
     border-radius: 1rem;
-    background-color: #ffffff;
-    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: gradient__background 15s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-.technicalSkill__Text{
-    margin: 0 0 0.625rem 0;
-    font-size: 0.875rem;
-    padding: 0;
-    color: #555;
-    line-height: 1.6;
+.skill__modern-card:hover .skill__icon-container {
+    transform: scale(1.1) rotate(5deg);
 }
 
-.technicalSkill__Text-Heading{
-    font-size: 1rem;
-    font-weight: 600;
-    margin-right: 0.3125rem;
+.skill__icon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.skill__category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
     background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
     background-size: 300% 300%;
     animation: gradient__background 15s ease-in-out infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.skill__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill__tag {
+    background: rgba(116, 98, 255, 0.1);
+    color: #5a4fcf;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(116, 98, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.skill__tag:hover {
+    background: rgba(116, 98, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(116, 98, 255, 0.3);
+}
+
+/* Skills Image Section */
+.skills__image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.skills__image-container {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+.skills__image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.skills__image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    border-radius: 1.5rem;
+}
+
+.skills__image-overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.skills__achievement-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.skills__achievement-badge i {
+    color: #f59e0b;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design for Modern Skills */
+@media (max-width: 768px) {
+    .skills__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .skills__modern-container {
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+    
+    .skill__modern-card {
+        padding: 1.5rem;
+    }
+    
+    .skill__icon-container {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .skill__icon {
+        font-size: 1.2rem;
+    }
+    
+    .skill__category-title {
+        font-size: 1.1rem;
+    }
+    
+    .skill__tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills__modern-container {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .skill__modern-card {
+        padding: 1.25rem;
+        margin: 0 0.5rem;
+    }
+    
+    .skills__image {
+        max-width: 100%;
+    }
+    
+    .skills__image-overlay {
+        bottom: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        padding: 0.75rem;
+    }
 }
 
 /* Social Section */
@@ -1348,4 +1554,4 @@ a:link {
         from { transform: translateX(0); }
         to { transform: translateX(calc(-100% - 8px)); }
     }
-}
+  }
