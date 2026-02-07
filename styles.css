@@ -1162,6 +1162,7 @@ a:link {
   }
 
   .section__heading{
+    background-color: #000000;
     text-align: center;
     display: flex;
     align-items: center;
