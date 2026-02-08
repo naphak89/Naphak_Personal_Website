@@ -1169,6 +1169,8 @@ a:link {
     font-size: 2rem;
     color: #FFFFFF;
     position: relative;
+    text-align: center;
+    margin-bottom: 0.5rem;
     z-index: 1;
     letter-spacing: 0.0625rem;
   }
@@ -1581,12 +1583,12 @@ a:link {
   .socials__Title{
     margin: 0;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: #444;
     margin-bottom: 1rem;
 }
 
-.fa-brands {
+.social__icon-wrap i {
     background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
     background-size: 300% 300%;
     animation: gradient__background 15s ease-in-out infinite;
@@ -1598,7 +1600,7 @@ a:link {
     transition: transform 0.3s ease;
 }
 
-.socials:hover .fa-brands {
+.socials:hover .social__icon-wrap i {
     transform: scale(1.15);
 }
 
