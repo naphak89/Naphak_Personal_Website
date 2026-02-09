@@ -638,7 +638,7 @@ body::before {
     width: 100%;
     border-radius: 3.5rem;
     transition: all 0.3s ease;
-    object-position: 0% 90%;
+    object-position: 0% 70%;
     position: relative;
     z-index: 2;
 }
